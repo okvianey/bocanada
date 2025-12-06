@@ -1,26 +1,58 @@
 @import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Inter:wght@300;400;500;600&display=swap'); */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-title: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Colores de marca */
+  --yellow: #F9B13A;    
+  --brown: #462319;
+  --softblack: #2A2523;
+  /* Neutrales cálidos (para fondo, tarjetas, secciones) */
+  --cream: #FFF8EE;
+  --sand: #E6DCCC;
+  --taupe: #CBBEAF;
+  --moka-light: #D1C4B8;
+  --almond: #F2E8DA;
+  /* Colores de apoyo (deliciosos, suaves, tipo pastelería) */
+  --terracota: #BB6A52;
+  --roseclay: #DDAF9B;
+  /* Estados */
+  --success: #6CA96F;
+  --warning: #D5A642;
+  --error: #C25A5A;
+
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-title: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Colores de marca */
+  --color-yellow: var(--yellow);      
+  --color-brown: var(--brown);
+  --color-softblack: var(--softblack);
+  /* Neutrales cálidos (para fondo, tarjetas, secciones) */
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-taupe: var(--taupe);
+  --color-almond: var(--almond);
+  --color-moka-light: var(--moka-light);
+  /* Colores de apoyo (deliciosos, suaves, tipo pastelería) */
+  --color-terracota: var(--terracota);
+  --color-roseclay: var(--roseclay);
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  font-family: var(--font-body);
+  color: var(--color-softblack);
 }
