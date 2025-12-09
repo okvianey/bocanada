@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-sand border-t border-taupe/40 py-10 mt-20">
+    <footer className="bg-sand border-t border-taupe/40 py-10">
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
         
         <div>
@@ -12,14 +12,14 @@ export default function Footer() {
           </p>
         </div>
 
-        <div>
+        {/* <div>
           <h3 className="font-semibold mb-2">Navegación</h3>
           <ul className="space-y-1 text-sm">
             <li><Link href="/">Inicio</Link></li>
             <li><Link href="/menu">Menú</Link></li>
             <li><Link href="/cart">Carrito</Link></li>
           </ul>
-        </div>
+        </div> */}
 
         <div>
           <h3 className="font-semibold mb-2">Contacto</h3>

@@ -6,7 +6,8 @@ export const products = [
     image: "/products/crokie-lotus.jpg",
     category: "crookies",
     description: "Suave, cremoso y con un toque de limón.",
-    disponibleHoy: true
+    disponibleHoy: true,
+    favorito: true,
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const products = [
     image: "/products/maxi-chispas.jpg",
     category: "galletas",
     description: "Crujientes por fuera, suaves por dentro.",
-    disponibleHoy: false
+    disponibleHoy: false,
+    favorito: true,
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const products = [
     image: "/products/maxi-smores.jpg",
     category: "cheesecakes",
     description: "Decorado con frutos rojos frescos.",
-    disponibleHoy: false
+    disponibleHoy: false,
+    favorito: true,
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ export const products = [
     image: "/products/crokie-smores.jpg",
     category: "postres",
     description: "Chocolate intenso y textura perfecta.",
-    disponibleHoy: false
+    disponibleHoy: false,
+    favorito: false,
   }
 ];

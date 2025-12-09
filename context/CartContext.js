@@ -10,9 +10,9 @@ export function CartProvider({ children }) {
   const toggleCart = () => setIsOpen(!isOpen);
 
   const addToCart = (product) => {
-     if (!product.disponibleHoy) {
-        alert("Este producto requiere pedido con 24 horas de anticipación.");
-     }
+    //  if (!product.disponibleHoy) {
+    //     alert("Este producto requiere pedido con 24 horas de anticipación.");
+    //  }
     
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);

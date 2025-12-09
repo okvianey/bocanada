@@ -1,7 +1,15 @@
-import Link from "next/link";
+'use client'
 import Image from "next/image";
+import { products } from "@/data/products";
+import { useCart } from "@/context/CartContext";
 
-export default function Destacados() {
+
+export default function Destacados({ product }) {
+  const { addToCart, cart, updateQuantity } = useCart();
+  const isFavorito = products.filter((p) => p.favorito);
+  const existing = cart.find((item) => item.id === isFavorito.id);
+    
+  
   return (
      <section className="max-w-6xl mx-auto px-6 py-20">
         <h2 className="font-title text-3xl text-softblack text-center mb-12">
@@ -9,47 +17,65 @@ export default function Destacados() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-10">
-          {[
-            {
-              name: "Cheesecake de Guayaba",
-              price: "$120",
-              img: "/products/caja-galletas.jpg",
-            },
-            {
-              name: "Roles de Canela",
-              price: "$25 c/u",
-              img: "/products/cheescake.jpg",
-            },
-            {
-              name: "Galletas de Chocolate",
-              price: "$15 c/u",
-              img: "/products/crokie-chip.jpg",
-            },
-          ].map((item, i) => (
+        {
+          isFavorito.map((product, i) => (
             <div
               key={i}
-              className="bg-cream rounded-2xl shadow-sm p-4 hover:shadow-md transition"
+              className="bg-white rounded-2xl shadow-sm p-4 hover:shadow-md transition"
             >
               <div className="relative w-full h-56 mb-3">
                 <Image
-                  src={item.img}
-                  alt={item.name}
+                  src={product.image}
+                  alt={product.name}
                   fill
                   className="object-cover rounded-xl"
                 />
               </div>
 
-              <h3 className="font-title text-xl text-softblack">{item.name}</h3>
+              <h3 className="font-title text-xl text-softblack">{product.name}</h3>
               <p className="text-softblack/60 mt-1 text-sm">
-                Artesanales y hechos con amor ♥
+                {product.description}
               </p>
-              <p className="font-semibold text-softblack mt-2">{item.price}</p>
 
-              <button className="bg-terracota text-white w-full mt-3 py-2 rounded-lg hover:bg-roseclay transition">
-                Agregar al carrito
-              </button>
+              <div className="flex items-center justify-between mt-2">
+                <span className="text-brand-brown font-bold text-xl">
+                  ${product.price}
+                </span>
+
+              { existing ? (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => updateQuantity(product.id, existing.qty - 1)}
+                    className="w-8 h-8 grid place-content-center rounded-full bg-almond text-brown"
+                  >
+                    –
+                  </button>
+                  <span className="w-6 text-center">{existing.qty}</span>
+                  <button
+                    onClick={() => updateQuantity(product.id, existing.qty + 1)}
+                    className="w-8 h-8 grid place-content-center rounded-full bg-brown text-white"
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => addToCart(product)}
+                  className="px-4 py-2 rounded-xl bg-brown text-white hover:bg-brown/90 transition-all"
+                >
+                  Agregar
+                </button>
+              )}
             </div>
+
+            </div>
+
           ))}
+        
+        
+
+
+
         </div>
       </section>
   );
