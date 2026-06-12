@@ -6,7 +6,6 @@
   --foreground: #171717;
   --font-title: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
-  
   /* Colores de marca */
   --yellow: #F9B13A;    
   --brown: #462319;
@@ -17,7 +16,7 @@
   --taupe: #CBBEAF;
   --moka-light: #D1C4B8;
   --almond: #F2E8DA;
-  /* Colores de apoyo (deliciosos, suaves, tipo pastelería) */
+  /* Colores de apoyo */
   --terracota: #BB6A52;
   --roseclay: #DDAF9B;
   /* Estados */
